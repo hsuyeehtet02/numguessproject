@@ -5,11 +5,14 @@
 		<title>	Number Guess</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+		<!-- bootstrape css1 js1 -->
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
 		<style type="text/css">
 
 			body{
 				font-family:'sans-serif';
-				background-color: #f4f4f4;
+/*				background-color: #f4f4f4;*/
 
 				height: 100vh;
 				display: flex;
@@ -17,11 +20,35 @@
 				align-items: center	;
 
 				overflow: hidden;
+				background: linear-gradient(40deg, purple,skyblue,pink,deeppink
+				);
+
+				
+				font-size: 20px;
+				font-weight: bold;
+/*				border: none;*/
+				
+				cursor: pointer;
+
+				transition: all 3s;
+			}
+
+			body:active{
+/*				box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);*/
+				transform: translateY(30px);
+
+
+			}
+			body:hover{
+				background-position: center;
+				background-size: 250%;
+/*				transform: translate(10px);*/
 			}
 
 			.form-control, .btn{
-				border-style: solid;
-				padding: 10px;
+				width: 300px;
+				border-style: solid ;
+				padding: 5px;
 
 			}
 
@@ -29,30 +56,89 @@
 				display: block;
 				margin-top: 5px;
 			}
+			.btn{
+				width: 150px;
+				background:linear-gradient(20deg, palevioletred,pink,deeppink,palevioletred );
+
+				font-size: 20px;
+				margin: 20px 20px;
+				border: 4px solid violetred ;
+			
+			}
+
+			.gameform a{
+				background:linear-gradient(40deg, deepskyblue,skyblue,blue );
+			}
+
 		</style>
 	</head>
 	<body>	
 
-		<div class="container">	
+		<div class="container-fluid">	
+			<div class="col-md-10 text-center">
+				<h1 class="fw-bold">Numerb Guess</h1>
+				<p>Guess a number between <span class="minnumber">00</span> to <span class="maxnumber">00</span></p>
 
-			<h1>Numerb Guess</h1>
-			<p>Guess a number between <span class="minnumber">00</span> to <span class="maxnumber">00</span></p>
+				<form id="gameform" class="gameform" action="" method="">	
 
-			<form id="gameform" class="gameform" action="" method="">	
+					<div class="form-group">
+					<div class="mx-auto p-2" style="width: 300px;">
+ 					<input type="number" name="guessnumber" id="guessnumber" class="form-control" placeholder="Enter your guess number..." autocomplete="off" autofocus />
 
-				<div class="form-group">
+							<input type="submit" id="btn" class="btn" />
+						</div>
+					</div>
 
-					<input type="number" name="guessnumber" id="guessnumber" class="form-control" placeholder="Enter your guess number..." autocomplete="off" autofocus />
+					<span class= "message1"></span>
+					<span class= "message2"></span>
 
-					<input type="submit" id="btn" class="btn" />
-
-				</div>
-
-				<span class= "message1"></span>
-				<span class= "message2"></span>
-			</form>
-
+					<a href="#" class="btn btn-warning btn-lg rounded-0" data-bs-toggle="modal" data-bs-target="#loginmodal">How To Play ?</a>
+				</form>
+			</div>
 		</div>
+
+
+
+		<!-- Start Get In Touch Modal -->
+
+			<div id="loginmodal" class="modal">
+
+				<div class='modal-dialog modal-dialog-centered modal-md modal-fullscreen-sm-down' >
+
+					<div class="modal-content" style="background-color:pink">
+						<div class="modal-header">
+						<h5 class="modal-title fw-bold">Read Here</h5>
+						<button type="button" class="btn-close" data-bs-dismiss = "modal"></button>
+					</div>
+
+					<div class="modal-body">
+						<div class="col-md-12">
+							
+							<ul class="fw-normal">
+								<li>Enter your guess number in white box</li>
+								<li>Press Submit (or) Press Enter in your keyboard</li>
+								<li>You have "5" chances to play</li>
+								<li>If you want to play again, please press "playagain"</li>
+								<li>Playagain will be appear after you use all chances.</li>
+
+								<br/>
+								<p class="text-center fw-bold">Enjoy your game!!</p>
+							</ul>
+								
+							</form>
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<p >Thank you for your interest!!</p>
+					</div>
+				</div>
+				
+			</div>
+		
+		<!-- End MODAL AREA -->
+		<!-- bootstrap css1 js1 -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 		<script src="./l48numberguess.js" type="text/javascript"></script>
 
