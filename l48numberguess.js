@@ -10,7 +10,7 @@ const minnum = document.querySelector(".minnumber"),
 
 
 const min = 1,
-	  max =10,
+	  max =20,
 	  winningnum = randomnum(min,max);
 
 let gameleft = 5;
